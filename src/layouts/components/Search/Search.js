@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
-// import * as searchServices from '~/services/searchService';
+import * as searchServices from '~/services/searchService';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
@@ -29,16 +29,16 @@ function Search() {
             return;
         }
 
-        // const fetchApi = async () => {
-        //     setLoading(true);
+        const fetchApi = async () => {
+            setLoading(true);
 
-        //     const result = await searchServices.search(debouncedValue);
+            const result = await searchServices.search(debouncedValue);
 
-        //     setSearchResult(result);
-        //     setLoading(false);
-        // };
+            setSearchResult(result);
+            setLoading(false);
+        };
 
-        // fetchApi();
+        fetchApi();
     }, [debouncedValue]);
 
     // click để xóa từ tìm kiếm

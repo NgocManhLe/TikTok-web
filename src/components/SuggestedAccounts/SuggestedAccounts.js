@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './SuggestedAccounts.module.scss';
 import AccountItem from './AccountItem';
@@ -22,8 +22,8 @@ function SuggestedAccounts({ label }) {
     );
 }
 
-SuggestedAccounts.propTypes = {
-    label: PropTypes.string.isRequired,
-};
+// SuggestedAccounts.propTypes = {
+//     label: PropTypes.string.isRequired,
+// };
 
 export default SuggestedAccounts;
