@@ -1,0 +1,17 @@
+.flex-grid {
+    display: flex;
+  }
+  .cell {
+    flex: 1;
+    cursor: pointer;
+    padding:1px;
+  }
+  .cellContent {
+      width: 100%;
+      height: 100%;
+  }
+  @media (max-width: 400px) {
+    .flex-grid {
+      display: block;
+    }
+  }
