@@ -24,11 +24,7 @@ function AccountItem() {
         <div>
             <Tippy interactive delay={[800, 0]} offset={[-20, 0]} placement="bottom" render={renderPreview}>
                 <div className={css('account-item')}>
-                    <img
-                        className={css('avatar')}
-                        src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/9c1763d086163fc41c05a6d731057f7f~c5_300x300.webp?x-expires=1665756000&x-signature=4mMKhiY5iC1vvo%2F5PiAbuY%2BpVkM%3D"
-                        alt=""
-                    />
+                    <img className={css('avatar')} src="https://picsum.photos/200/300" alt="" />
                     <div className={css('item-info')}>
                         <p className={css('nickname')}>
                             <strong>NGUYỄN VĂN A</strong>

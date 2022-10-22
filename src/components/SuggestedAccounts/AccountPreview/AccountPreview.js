@@ -11,11 +11,7 @@ function AccountPreview() {
     return (
         <div className={css('wrapper')}>
             <div className={css('header')}>
-                <img
-                    className={css('avatar')}
-                    src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/9c1763d086163fc41c05a6d731057f7f~c5_300x300.webp?x-expires=1665756000&x-signature=4mMKhiY5iC1vvo%2F5PiAbuY%2BpVkM%3D"
-                    alt=""
-                />
+                <img className={css('avatar')} src="https://picsum.photos/200/300" alt="" />
                 <Button className={css('follow-btn')} primary>
                     Follow
                 </Button>
@@ -29,7 +25,7 @@ function AccountPreview() {
                 <p className={css('analytics')}>
                     <strong className={css('value')}>10M </strong>
                     <span className={css('label')}>Followers</span>
-                    <strong className={css('value')}>10M </strong>
+                    <strong className={css('value')}>9.5M </strong>
                     <span className={css('label')}>Likes</span>
                 </p>
             </div>
