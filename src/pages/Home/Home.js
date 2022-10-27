@@ -31,19 +31,25 @@ function Home() {
                 console.error(error);
             });
     }, []);
+
+    const [follow, setFollow] = useState(false);
+    const followBtn = () => {
+        setFollow(!follow);
+    };
+
+    const [likeBtn, setLikeBtn] = useState(false);
+
     return (
         <div style={{ margin: 60 }}>
             {video.map((item) => {
                 return (
                     <>
                         <div className={css('userName')}>
-                            <img
-                                className={css('avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/9c1763d086163fc41c05a6d731057f7f~c5_300x300.webp?x-expires=1665756000&x-signature=4mMKhiY5iC1vvo%2F5PiAbuY%2BpVkM%3D"
-                                alt=""
-                            />
+                            <img className={css('avatar')} src="https://picsum.photos/200 " alt="" />
                             <h2>Ng.Huyen</h2>
-                            <button className={css('more-btn')}>Follow</button>
+                            <button onClick={followBtn} className={css('more-btn')}>
+                                {follow ? 'Follwing' : 'Follow'}
+                            </button>
                         </div>
                         <div className={css('line')}>
                             <video autoPlay controls className={css('video')}>
@@ -51,16 +57,25 @@ function Home() {
                             </video>
                             <div className={css('iconVideo')}>
                                 <div className={css('iconCheck')}>
+                                    {/* <FontAwesomeIcon
+                                        onClick={() => {
+                                            setLikeBtn(true);
+                                        }}
+                                        className={css(`'check' ${likeBtn ? '' : 'hidden'}`)}
+                                        icon={faHeart}
+                                    /> */}
                                     <FontAwesomeIcon className={css('check')} icon={faHeart} />
+
                                     <h3>{Math.floor(Math.random() * 5000)}</h3>
                                 </div>
                                 <div className={css('iconCheck')}>
                                     <FontAwesomeIcon className={css('check')} icon={faCommentDots} />
-                                    <h3>{Math.floor(Math.random() * 500)}</h3>
+
+                                    <h3>{Math.floor(Math.random() * 2000)}</h3>
                                 </div>
                                 <div className={css('iconCheck')}>
                                     <FontAwesomeIcon className={css('check')} icon={faShare} />
-                                    <h3>{Math.floor(Math.random() * 100)}</h3>
+                                    <h3>{Math.floor(Math.random() * 1000)}</h3>
                                 </div>
                             </div>
                         </div>

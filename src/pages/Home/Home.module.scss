@@ -98,20 +98,15 @@
 .iconCheck  {
   // text-align: center;
   display: flex;
+  position: relative;
 
 }
 
 .iconCheck h3  {
-  // position: absolute;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
   font-weight: 400;
-  color: red;
-  margin: 0 auto;
-  // top: 60px;
-  // left: 16px;
-  // padding-bottom: 10px;
-
+  color: #444;
+  top: -27px;
 }
 
 .iconCheck {

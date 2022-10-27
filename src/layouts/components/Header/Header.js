@@ -7,6 +7,7 @@ import {
     faEllipsisVertical,
     faGear,
     faKeyboard,
+    faMoon,
     faSignOut,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
@@ -44,6 +45,11 @@ const menu_feedback = [
                 },
             ],
         },
+    },
+    {
+        icon: <FontAwesomeIcon icon={faMoon} />,
+        title: 'Dark-Light',
+        to: '/',
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -85,6 +91,7 @@ function Header() {
             title: 'Settings',
             to: '/settings',
         },
+        ,
         ...menu_feedback,
         {
             icon: <FontAwesomeIcon icon={faSignOut} />,
@@ -134,7 +141,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={css('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/9c1763d086163fc41c05a6d731057f7f~c5_300x300.webp?x-expires=1665756000&x-signature=4mMKhiY5iC1vvo%2F5PiAbuY%2BpVkM%3D"
+                                src="https://picsum.photos/seed/picsum/200/300"
                                 alt="Nguyen Van A"
                             />
                         ) : (

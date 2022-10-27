@@ -1,6 +1,8 @@
 import classNames from 'classnames/bind';
 import styles from './Sidebar.module.scss';
 import Menu, { MenuItem } from './Menu';
+import Button from '~/components/Button';
+
 import {
     HomeIcon,
     HomeActiveIcon,
@@ -15,6 +17,8 @@ import config from '~/config';
 const css = classNames.bind(styles);
 
 function Sidebar() {
+    const currentUser = true;
+
     return (
         <aside className={css('wrapper')}>
             <Menu>
@@ -27,9 +31,19 @@ function Sidebar() {
                 />
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
-
-            <SuggestedAccounts label="Suggested accounts" />
-            <SuggestedAccounts label="Following accounts" />
+            {currentUser ? (
+                <>
+                    <SuggestedAccounts label="Suggested accounts" />
+                    <SuggestedAccounts label="Following accounts" />
+                </>
+            ) : (
+                <>
+                    <h3 className={css('textDes')}>Sign in to follow authors, like videos, and view comments..</h3>
+                    <Button outline large btnNone>
+                        Log in
+                    </Button>
+                </>
+            )}
         </aside>
     );
 }
