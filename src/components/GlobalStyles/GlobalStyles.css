@@ -91,4 +91,5 @@ body .tippy-content {
 }
 body .tippy-box[data-placement^=bottom] > .tippy-arrow:before {
   top: -8px;
-}/*# sourceMappingURL=GlobalStyles.css.map */
+}
+/* sourceMappingURL=GlobalStyles.css.map */

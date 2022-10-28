@@ -9,7 +9,7 @@ import styles from './SuggestedAccounts.module.scss';
 
 const css = classNames.bind(styles);
 
-function AccountItem() {
+function AccountItem({ name, email, avatar }) {
     const renderPreview = (props) => {
         return (
             <div tabIndex="-1" {...props}>
@@ -24,13 +24,13 @@ function AccountItem() {
         <div>
             <Tippy interactive delay={[800, 0]} offset={[-20, 0]} placement="bottom" render={renderPreview}>
                 <div className={css('account-item')}>
-                    <img className={css('avatar')} src="https://picsum.photos/200/300" alt="" />
+                    <img className={css('avatar')} src={avatar} alt="avatar" />
                     <div className={css('item-info')}>
                         <p className={css('nickname')}>
-                            <strong>NGUYỄN VĂN A</strong>
+                            <strong>{name}</strong>
                             <FontAwesomeIcon className={css('check')} icon={faCheckCircle} />
                         </p>
-                        <p className={css('name')}>nva@gmail.com</p>
+                        <p className={css('name')}>{email}</p>
                     </div>
                 </div>
             </Tippy>

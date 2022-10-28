@@ -1,5 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Sidebar.module.scss';
+import { Link } from 'react-router-dom';
+
 import Menu, { MenuItem } from './Menu';
 import Button from '~/components/Button';
 
@@ -39,9 +41,11 @@ function Sidebar() {
             ) : (
                 <>
                     <h3 className={css('textDes')}>Sign in to follow authors, like videos, and view comments..</h3>
-                    <Button outline large btnNone>
-                        Log in
-                    </Button>
+                    <Link to="/login">
+                        <Button outline large btnNone>
+                            Log in
+                        </Button>
+                    </Link>
                 </>
             )}
         </aside>

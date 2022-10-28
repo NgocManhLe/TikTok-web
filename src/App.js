@@ -7,6 +7,7 @@ import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './components/GlobalStyles/GlobalStyles.scss';
 import Login from './pages/Login';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     // scroll top

@@ -1,0 +1,10 @@
+.video-parent {
+    width: 265px !important;
+    height: 471px !important;
+}
+
+.video-parent video {
+    object-fit: cover;
+    display: flex;
+    position: relative;
+}
