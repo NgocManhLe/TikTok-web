@@ -18,12 +18,12 @@ function AccountPreview() {
             </div>
             <div className={css('body')}>
                 <p className={css('nickname')}>
-                    <strong>NGUYỄN VĂN A</strong>
+                    <strong>Nguyễn Văn A</strong>
                     <FontAwesomeIcon className={css('check')} icon={faCheckCircle} />
                 </p>
                 <p className={css('name')}>nva@gmail.com</p>
                 <p className={css('analytics')}>
-                    <strong className={css('value')}>10M </strong>
+                    <strong className={css('value')}> 10M </strong>
                     <span className={css('label')}>Followers</span>
                     <strong className={css('value')}>9.5M </strong>
                     <span className={css('label')}>Likes</span>

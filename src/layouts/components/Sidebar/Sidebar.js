@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Menu, { MenuItem } from './Menu';
 import Button from '~/components/Button';
+import { Login } from '~/pages/Trangdn/Login';
 
 import {
     HomeIcon,
@@ -19,7 +20,7 @@ import config from '~/config';
 const css = classNames.bind(styles);
 
 function Sidebar() {
-    const currentUser = true;
+    const currentUser = false;
 
     return (
         <aside className={css('wrapper')}>

@@ -7,6 +7,7 @@
     border-radius: 4px;
     color: var(--text-color);
     transition: background-color ease-in-out 200ms;
+    text-decoration: none;
 
     &.active {
         color: var(--primary);
@@ -19,9 +20,15 @@
             display: flex;
         }
     }
+    & .a {
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.03) !important;
+            text-decoration: none;
+        }
+    }
 
     &:hover {
-        background-color: rgba(22, 24, 35, 0.03);
+        background-color: rgba(22, 24, 35, 0.03) !important;
     }
 }
 

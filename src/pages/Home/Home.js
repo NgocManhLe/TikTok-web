@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
-import { faCommentDots, faHeart, faShare } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlay, faCommentDots, faHeart, faShare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ReactPlayer from 'react-player';
 import './custom.css';
@@ -28,7 +28,7 @@ function Home() {
         axios
             .request(options)
             .then(function (response) {
-                console.log(response.data);
+                // console.log(response.data);
                 setvideo(response.data.result.video.url_list);
             })
             .catch(function (error) {
@@ -36,17 +36,12 @@ function Home() {
             });
     }, []);
 
-    const [follow, setFollow] = useState(false);
-    const followBtn = () => {
-        setFollow(!follow);
-    };
-
     const [likeBtn, setLikeBtn] = useState(false);
 
     return (
         <div style={{ margin: 60 }}>
             {video.map((item, index) => {
-                return <HomeVideo key={index} item={item} follow={follow} followBtn={followBtn} />;
+                return <HomeVideo key={index} item={item} />;
             })}
         </div>
     );
@@ -54,9 +49,9 @@ function Home() {
 
 export default Home;
 
-const HomeVideo = ({ item, follow, followBtn }) => {
-    const [react] = useState({
-        like: randomNum(5000),
+const HomeVideo = ({ item }) => {
+    const [react, setReact] = useState({
+        like: 3478,
         comment: randomNum(2000),
         share: randomNum(500),
     });
@@ -66,6 +61,19 @@ const HomeVideo = ({ item, follow, followBtn }) => {
 
     const handleClickVideo = () => {
         setPlay(!play);
+    };
+
+    const [like, setLike] = useState(false);
+    const clickLike = () => {
+        setLike(!like);
+        {
+            !like ? setReact({ ...react, like: 3478 + 1 }) : setReact({ ...react, like: 3478 });
+        }
+    };
+
+    const [follow, setFollow] = useState(false);
+    const followBtn = () => {
+        setFollow(!follow);
     };
 
     return (
@@ -78,12 +86,12 @@ const HomeVideo = ({ item, follow, followBtn }) => {
                 </button>
             </div>
             <div className={css('line')}>
-                <div onClick={handleClickVideo}>
-                    {!play ? <p>Play</p> : null}
+                <div onClick={handleClickVideo} className={css('videoUrl')}>
+                    <div className={css('playVideo')}>{!play ? <FontAwesomeIcon icon={faCirclePlay} /> : null}</div>
                     <ReactPlayer url={item} className="video-parent" loop playing={play} />
                 </div>
                 <div className={css('iconVideo')}>
-                    <div className={css('iconCheck')}>
+                    <div className={`iconCheck ${like ? 'likeTrue' : ''}`} onClick={clickLike}>
                         {/* <FontAwesomeIcon
                 onClick={() => {
                     setLikeBtn(true);

@@ -7,7 +7,7 @@ import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './components/GlobalStyles/GlobalStyles.scss';
 import Login from './pages/Login';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     // scroll top
@@ -43,7 +43,7 @@ function App() {
     return (
         <Router>
             <div className="App">
-                <Login />
+                {/* <Login /> */}
                 <button className={`btn-scroll-to-top ${btnScrollTopShow ? '' : 'hidden'}`} onClick={scrollToTop}>
                     <FontAwesomeIcon icon={faArrowAltCircleUp} />
                 </button>
