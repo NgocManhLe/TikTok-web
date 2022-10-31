@@ -142,8 +142,8 @@ function Header() {
                         </>
                     )}
 
-                    <Menu items={currentUser ? userMenu : menu_feedback} onChange={handleMenuChange}>
-                        {currentUser ? (
+                    <Menu items={auth ? userMenu : menu_feedback} onChange={handleMenuChange}>
+                        {auth ? (
                             <Image
                                 className={css('user-avatar')}
                                 src="https://picsum.photos/seed/picsum/200/300"
