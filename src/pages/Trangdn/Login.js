@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { NavLink } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ import SIgn_img from './SIgn_img';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { LayoutContext } from '~/context/LayoutContext';
 const Login = () => {
     const history = useNavigate();
 
@@ -34,8 +34,9 @@ const Login = () => {
     };
 
     const [currentUser, setCurrentUser] = useState(false);
+    const { login } = useContext(LayoutContext);
+
     const addData = (e) => {
-        setCurrentUser(true);
         e.preventDefault();
         console.log(currentUser);
 
@@ -71,17 +72,17 @@ const Login = () => {
                 } else {
                     console.log('user login succesfulyy');
 
-                    localStorage.setItem('user_login', JSON.stringify(userlogin));
+                    setCurrentUser(true);
+                    login();
 
-                    history('/');
+                    setTimeout(() => {
+                        history('/');
+                    }, 2000);
                 }
             }
         }
     };
 
-    // const CurrentUser = () => {
-    //     return currentUser;
-    // };
     return (
         <>
             <div className="container ">
@@ -124,4 +125,3 @@ const Login = () => {
 };
 
 export default Login;
-// export { CurrentUser };

@@ -23,6 +23,8 @@ import Menu from '~/components/Popper/Menu';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
+import { LayoutContext } from '~/context/LayoutContext';
+import { useContext } from 'react';
 
 const css = classNames.bind(styles);
 
@@ -64,6 +66,7 @@ const menu_feedback = [
 
 function Header() {
     const currentUser = false;
+    const { auth } = useContext(LayoutContext);
 
     // Handle logic
     const handleMenuChange = (menuItem) => {
@@ -111,7 +114,7 @@ function Header() {
                 <Search />
 
                 <div className={css('actions')}>
-                    {currentUser ? (
+                    {auth ? (
                         <>
                             <Tippy delay={[0, 50]} content="Upload video" placement="bottom">
                                 <button className={css('action-btn')}>

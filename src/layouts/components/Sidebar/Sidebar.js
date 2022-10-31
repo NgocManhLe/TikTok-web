@@ -16,11 +16,14 @@ import {
 } from '~/components/Icons';
 import SuggestedAccounts from '~/components/SuggestedAccounts';
 import config from '~/config';
+import { useContext } from 'react';
+import { LayoutContext } from '~/context/LayoutContext';
 
 const css = classNames.bind(styles);
 
 function Sidebar() {
     const currentUser = false;
+    const { auth } = useContext(LayoutContext);
 
     return (
         <aside className={css('wrapper')}>
@@ -34,7 +37,7 @@ function Sidebar() {
                 />
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
-            {currentUser ? (
+            {auth ? (
                 <>
                     <SuggestedAccounts label="Suggested accounts" />
                     <SuggestedAccounts label="Following accounts" />
